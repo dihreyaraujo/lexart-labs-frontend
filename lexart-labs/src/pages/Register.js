@@ -42,8 +42,8 @@ class Register extends React.Component {
     try {
       const data = await axios.post(url, { username, password });
       console.log('teste: ', data.data);
-      if (data.response.data.message === 'Usuário criado com sucesso.') {
-        window.location.assign('http://localhost:3000/login');
+      if (data.data.message === 'Usuário criado com sucesso.') {
+        window.location.assign('http://localhost:3000/');
       } else {
         this.setState({ errorMessage: data.response.data.message });
       }
