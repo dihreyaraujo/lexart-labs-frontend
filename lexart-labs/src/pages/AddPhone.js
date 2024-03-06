@@ -66,28 +66,28 @@ class AddPhone extends React.Component {
   transformProd = () => {
     const { product } = this.state;
     const prodInHtml = (
-      <div>
-        <div>
-          <label>Nome: </label>
+      <div className='form-update'>
+        <div className='inputs-form'>
+          <p>Nome: </p>
           <input type='text' value={product.name} id={"name"} onChange={(e) => this.typeEvent(e)} />
         </div>
-        <div>
-          <label>Marca: </label>
+        <div className='inputs-form'>
+          <p>Marca: </p>
           <input type='text' value={product.brand} id={"brand"} onChange={(e) => this.typeEvent(e)} />
         </div>
-        <div>
-          <label>Modelo: </label>
+        <div className='inputs-form'>
+          <p>Modelo: </p>
           <input type='text' value={ product.model } id={ "model" } onChange={(e) => this.typeEvent(e)} />
         </div>
-        <div>
-          <label>Cor: </label>
+        <div className='inputs-form'>
+          <p>Cor: </p>
           <input type='text' value={ product.color } id={ "color" } onChange={(e) => this.typeEvent(e)} />
         </div>
-        <div>
-          <label>Preço: </label>
+        <div className='inputs-form'>
+          <p>Preço: </p>
           <input type='text' value={ product.price } id={ "price" } onChange={(e) => this.typeEvent(e)} />
         </div>
-        <button type='button' onClick={ async () => await this.updateProduct() }>Adicionar</button>
+        <button type='button' className='att-button' onClick={ async () => await this.updateProduct() }>Adicionar</button>
       </div>
     );
     return prodInHtml;

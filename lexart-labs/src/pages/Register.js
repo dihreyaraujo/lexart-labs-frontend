@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../style/Register.css'
 
 class Register extends React.Component {
   state = {
@@ -56,11 +57,11 @@ class Register extends React.Component {
   render() {
     const { username, password, btnDisable, errorMessage } = this.state;
     return (
-      <div>
+      <div className='login-container'>
         <h1>Register</h1>
         <p>Lexart Labs - Processo Seletivo</p>
-        <form>
-          <p>Usuário</p>
+        <div className='form'>
+          <p>Usuário: </p>
           <label htmlFor='username'>
             <input
               type='text'
@@ -69,7 +70,7 @@ class Register extends React.Component {
               onChange={ (e) => this.typeEvent(e) }
             />
           </label>
-          <p>Senha</p>
+          <p>Senha: </p>
           <label htmlFor='password'>
             <input
               type='password'
@@ -83,15 +84,16 @@ class Register extends React.Component {
             type='button'
             disabled={ btnDisable }
             onClick={ this.verifyUser }
+            className='enter'
           >
             Registrar
           </button>
           <p>
             Já possui uma conta? 
-            <Link to='/'>
-              Entre
-            </Link>
           </p>
+          <Link to='/' className='register'>
+              Entre
+          </Link>
           {
             errorMessage
             ? (
@@ -100,7 +102,7 @@ class Register extends React.Component {
               </p>
             ) : ''
           }
-        </form>
+        </div>
       </div>
     )
   }

@@ -1,0 +1,26 @@
+.form-update {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.inputs-form {
+  margin: 10px 0;
+}
+
+.att-button {
+  margin-top: 10px;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.att-button:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}

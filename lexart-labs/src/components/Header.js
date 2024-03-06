@@ -1,4 +1,5 @@
 import React from "react";
+import '../style/Header.css'
 
 class Header extends React.Component {
   exitAccount = () => {
@@ -9,12 +10,12 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <div>
+        <div className="header-main">
           <h1>{ '</> Lexart Labs' }</h1>
           <p>Processo Seletivo</p>
         </div>
         <div>
-          <button type="button" onClick={ this.exitAccount }>
+          <button type="button" className="exit-button" onClick={ this.exitAccount }>
             Sair
           </button>
         </div>

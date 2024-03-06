@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../components/Header';
+import '../style/Phones.css'
 
 class Phones extends React.Component {
   state = {
@@ -53,16 +54,16 @@ class Phones extends React.Component {
 
   transformProd = (prod) => {
     const prodInHtml = prod.map((elem) => (
-      <div>
+      <div className='phone'>
         <h2>Nome: { elem.name }</h2>
         <p>Marca: { elem.brand }</p>
         <p>Modelo: { elem.model }</p>
         <p>Cor: { elem.color }</p>
         <p>Preço: R${ elem.price },00</p>
         <Link to={`/products/${elem.id}`}>
-          <button type='button'>Editar</button>
+          <button type='button' className='edit-button'>Editar</button>
         </Link>
-        <button id={ elem.id } onClick={ async (e) => await this.deleteProd(e) }>Apagar</button>
+        <button id={ elem.id } className='delete-button' onClick={ async (e) => await this.deleteProd(e) }>Apagar</button>
       </div>
     ));
     return prodInHtml
@@ -91,7 +92,7 @@ class Phones extends React.Component {
     const brands = prod.map((elem) => elem.brand)
     const brandsNoRepeat = [...new Set(brands)]
     const brandsElement = brandsNoRepeat.map((elem) => (
-      <button type='button' id={ elem } onClick={ (e) => this.filterBrand(e) }>{ elem }</button>
+      <button type='button' id={ elem } className='button-filter' onClick={ (e) => this.filterBrand(e) }>{ elem }</button>
     ));
     return brandsElement
   }
@@ -101,16 +102,19 @@ class Phones extends React.Component {
     return (
       <div>
         <Header />
-        <div>
-          <label htmlFor='searchProducts'>Pesquisar produto: </label>
-          <input type='text' id='searchProducts' value={ searchProducts } onChange={ (e) => this.typeEvent(e) } />
+        <div className='navbar-filter'>
+          <div>
+            <label htmlFor='searchProducts' className='search-product'>Pesquisar produto: </label>
+            <input type='text' id='searchProducts' value={ searchProducts } onChange={ (e) => this.typeEvent(e) } />
+          </div>
           <br />
-          <Link to="/product/add"><button type='button'>Adicionar produto</button></Link>
-          <br />
-          <button type='button' id='todos' onClick={ (e) => this.filterBrand(e) }>Todos</button>
-          { this.buttonsBrand(products) }
+          <div>
+            <button type='button' id='todos' onClick={ (e) => this.filterBrand(e) } className='button-filter'>Todos</button>
+            { this.buttonsBrand(products) }
+            <Link to="/product/add"><button type='button' className='button-filter'>Adicionar produto</button></Link>
+          </div>
         </div>
-        <div>
+        <div className='container-phones'>
           { errorMsg ? <p>{ errorMsg }</p> : filterBrands.length > 0 ? this.transformProd(filterBrands) : searchProducts ? this.transformProd(filterProducts) : this.transformProd(products) }
         </div>
       </div>

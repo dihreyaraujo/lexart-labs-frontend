@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../components/Header';
+import '../style/PhoneId.css'
 
 const PhoneId = () => {
   const [product, setProduct] = useState([]);
@@ -62,27 +63,29 @@ const PhoneId = () => {
     const prodInHtml = (
       <div>
         <Header />
-        <div>
-          <label>Nome: </label>
-          <input type='text' value={ product.name } id={ "name" } onChange={(e) => typeEvent(e)} />
+        <div className='form-update'>
+          <div className='inputs-form'>
+            <p>Nome: </p>
+            <input type='text' value={ product.name } id={ "name" } onChange={(e) => typeEvent(e)} />
+          </div>
+          <div className='inputs-form'>
+            <p>Marca: </p>
+            <input type='text' value={ product.brand } id={ "brand" } onChange={(e) => typeEvent(e)} />
+          </div>
+          <div className='inputs-form'>
+            <p>Modelo: </p>
+            <input type='text' value={ product.model } id={ "model" } onChange={(e) => typeEvent(e)} />
+          </div>
+          <div className='inputs-form'>
+            <p>Cor: </p>
+            <input type='text' value={ product.color } id={ "color" } onChange={(e) => typeEvent(e)} />
+          </div>
+          <div className='inputs-form'>
+            <p>Preço: </p>
+            <input type='text' value={ product.price } id={ "price" } onChange={(e) => typeEvent(e)} />
+          </div>
+          <button type='button' className='att-button' onClick={ async () => await updateProduct() }>Atualizar</button>
         </div>
-        <div>
-          <label>Marca: </label>
-          <input type='text' value={ product.brand } id={ "brand" } onChange={(e) => typeEvent(e)} />
-        </div>
-        <div>
-          <label>Modelo: </label>
-          <input type='text' value={ product.model } id={ "model" } onChange={(e) => typeEvent(e)} />
-        </div>
-        <div>
-          <label>Cor: </label>
-          <input type='text' value={ product.color } id={ "color" } onChange={(e) => typeEvent(e)} />
-        </div>
-        <div>
-          <label>Preço: </label>
-          <input type='text' value={ product.price } id={ "price" } onChange={(e) => typeEvent(e)} />
-        </div>
-        <button type='button' onClick={ async () => await updateProduct() }>Atualizar</button>
       </div>
     );
     return prodInHtml;
