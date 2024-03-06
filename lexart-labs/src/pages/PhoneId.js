@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../components/Header';
-import '../style/PhoneId.css'
+import '../style/PhoneId.css';
 
 const PhoneId = () => {
   const [product, setProduct] = useState([]);
@@ -15,7 +15,7 @@ const PhoneId = () => {
 
   const verifyLogged = async () => {
     try {
-      const url = 'http://localhost:3001/products';
+      const url = 'https://lexart-labs-backend-sooty.vercel.app/products';
       const token = JSON.parse(localStorage.getItem('tokenLexart'));
       const user = await axios.get(url, {
         headers: {
@@ -40,7 +40,7 @@ const PhoneId = () => {
   };
 
   const updateProduct = async () => {
-    const url = 'http://localhost:3001/products';
+    const url = 'https://lexart-labs-backend-sooty.vercel.app/products';
     const token = JSON.parse(localStorage.getItem('tokenLexart'));
     try {
       const response = await axios.put(url, product, {

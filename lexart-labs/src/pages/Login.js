@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../style/Login.css'
+import '../style/Login.css';
 
 class Login extends React.Component {
   state = {
@@ -39,7 +39,7 @@ class Login extends React.Component {
 
   verifyUser = async () => {
     const { username, password } = this.state;
-    const url = 'http://localhost:3001/login'
+    const url = 'https://lexart-labs-backend-sooty.vercel.app/login'
     try {
       const data = await axios.post(url, { username, password });
       console.log(data.data);

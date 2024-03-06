@@ -20,7 +20,7 @@ class AddPhone extends React.Component {
 
   verifyLogged = async () => {
     try {
-      const url = 'http://localhost:3001/products';
+      const url = 'https://lexart-labs-backend-sooty.vercel.app/products';
       const token = JSON.parse(localStorage.getItem('tokenLexart'));
       await axios.get(url, {
         headers: {
@@ -44,7 +44,7 @@ class AddPhone extends React.Component {
 
   updateProduct = async () => {
     const { product } = this.state;
-    const url = 'http://localhost:3001/products';
+    const url = 'https://lexart-labs-backend-sooty.vercel.app/products';
     const token = JSON.parse(localStorage.getItem('tokenLexart'));
     try {
       const response = await axios.post(url, product, {

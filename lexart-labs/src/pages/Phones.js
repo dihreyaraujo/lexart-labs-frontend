@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../components/Header';
-import '../style/Phones.css'
+import '../style/Phones.css';
 
 class Phones extends React.Component {
   state = {
@@ -19,7 +19,7 @@ class Phones extends React.Component {
 
   verifyLogged = async () => {
     try {
-      const url = 'http://localhost:3001/products';
+      const url = 'https://lexart-labs-backend-sooty.vercel.app/products';
       const token = JSON.parse(localStorage.getItem('tokenLexart'));
       const user = await axios.get(url, {
         headers: {
@@ -36,7 +36,7 @@ class Phones extends React.Component {
 
   deleteProd = async ({ target }) => {
     try {
-      const url = 'http://localhost:3001/productsDelete';
+      const url = 'https://lexart-labs-backend-sooty.vercel.app/productsDelete';
       const token = JSON.parse(localStorage.getItem('tokenLexart'));
       const user = await axios.post(url, { id: target.id } ,{
         headers: {

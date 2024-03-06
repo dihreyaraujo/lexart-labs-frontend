@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../style/Register.css'
+import '../style/Register.css';
 
 class Register extends React.Component {
   state = {
@@ -39,7 +39,7 @@ class Register extends React.Component {
   verifyUser = async () => {
     const { username, password } = this.state;
     console.log('CHAMOU VERIFY')
-    const url = 'http://localhost:3001/register';
+    const url = 'https://lexart-labs-backend-sooty.vercel.app/register';
     try {
       const data = await axios.post(url, { username, password });
       console.log('teste: ', data.data);
