@@ -4,7 +4,7 @@ import '../style/Header.css'
 class Header extends React.Component {
   exitAccount = () => {
     localStorage.removeItem('tokenLexart');
-    window.location.assign('http://localhost:3000/')
+    window.location.assign('https://lexart-labs-frontend.vercel.app/')
   }
 
   render() {
