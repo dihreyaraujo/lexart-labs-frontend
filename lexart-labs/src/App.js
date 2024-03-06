@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Phones from './pages/Phones';
+import PhoneId from './pages/PhoneId';
 
 class App extends Component {
   render() {
@@ -11,7 +12,8 @@ class App extends Component {
         <Routes>
           <Route exact path="/" element={ <Login /> } />
           <Route path="/register" element={ <Register /> } />
-          <Route path="/products" element={ <Phones /> } />
+          <Route exact path="/products" element={ <Phones /> } />
+          <Route path="/products/:id" element={ <PhoneId /> } />
         </Routes>
       </div>
     )

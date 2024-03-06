@@ -24,7 +24,6 @@ class Phones extends React.Component {
           "Authorization": token
         }
       });
-      console.log(user);
       if (user) {
         this.setState({ products: user.data });
       }
@@ -71,7 +70,6 @@ class Phones extends React.Component {
   typeEvent = ({ target }) => {
     const inputEvent = target.id;
     const { products } = this.state;
-    console.log(products)
     const filterProd = products.filter((elem) => elem.name.toLowerCase().includes(target.value.toLowerCase()))
     this.setState({ [inputEvent]: target.value, filterProducts: filterProd });
   };
