@@ -16,7 +16,7 @@ class Register extends React.Component {
     const verifyLoginLogout = () => {
       const user = JSON.parse(localStorage.getItem('tokenLexart'));
       if (user) {
-        window.location.assign('http://localhost:3000/products');
+        window.location.assign('https://lexart-labs-frontend.vercel.app/products');
       }
     }
     verifyLoginLogout();
@@ -44,7 +44,7 @@ class Register extends React.Component {
       const data = await axios.post(url, { username, password });
       console.log('teste: ', data.data);
       if (data.data.message === 'Usuário criado com sucesso.') {
-        window.location.assign('http://localhost:3000/');
+        window.location.assign('https://lexart-labs-frontend.vercel.app/');
       } else {
         this.setState({ errorMessage: data.response.data.message });
       }

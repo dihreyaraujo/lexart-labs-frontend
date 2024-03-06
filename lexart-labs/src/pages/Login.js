@@ -17,7 +17,7 @@ class Login extends React.Component {
       const user = JSON.parse(localStorage.getItem('tokenLexart'));
       console.log(user);
       if (user) {
-        window.location.assign('http://localhost:3000/products');
+        window.location.assign('https://lexart-labs-frontend.vercel.app/products');
       }
     }
     verifyLoginLogout();
@@ -45,7 +45,7 @@ class Login extends React.Component {
       console.log(data.data);
       const token = data.data.token;
       localStorage.setItem('tokenLexart', JSON.stringify(token));
-      window.location.assign('http://localhost:3000/products');
+      window.location.assign('https://lexart-labs-frontend.vercel.app/products');
     } catch (e) {
       this.setState({ errorMessage: e.response.data.message });
       console.log(e.response);

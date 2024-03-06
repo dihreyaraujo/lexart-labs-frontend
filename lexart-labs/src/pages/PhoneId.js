@@ -50,7 +50,7 @@ const PhoneId = () => {
         }
       });
       if (response.data.message === 'Produto atualizado com sucesso') {
-        window.location.assign('http://localhost:3000/products');
+        window.location.assign('https://lexart-labs-frontend.vercel.app/products');
       } else {
         setError(response.data.message)
       }

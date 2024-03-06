@@ -54,7 +54,7 @@ class AddPhone extends React.Component {
         }
       });
       if (response.data.message === 'Produto cadastrado com sucesso') {
-        window.location.assign('http://localhost:3000/products');
+        window.location.assign('https://lexart-labs-frontend.vercel.app/products');
       } else {
         this.setState({ errorMsg: response.data.message })
       }
