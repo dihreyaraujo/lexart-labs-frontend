@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Header from '../components/Header';
 
 class Phones extends React.Component {
   state = {
@@ -99,9 +100,12 @@ class Phones extends React.Component {
     const { errorMsg, searchProducts, filterProducts, products, filterBrands } = this.state;
     return (
       <div>
+        <Header />
         <div>
           <label htmlFor='searchProducts'>Pesquisar produto: </label>
           <input type='text' id='searchProducts' value={ searchProducts } onChange={ (e) => this.typeEvent(e) } />
+          <br />
+          <Link to="/product/add"><button type='button'>Adicionar produto</button></Link>
           <br />
           <button type='button' id='todos' onClick={ (e) => this.filterBrand(e) }>Todos</button>
           { this.buttonsBrand(products) }

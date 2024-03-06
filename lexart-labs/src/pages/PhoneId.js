@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import Header from '../components/Header';
 
 const PhoneId = () => {
   const [product, setProduct] = useState([]);
@@ -60,6 +61,7 @@ const PhoneId = () => {
   const transformProd = () => {
     const prodInHtml = (
       <div>
+        <Header />
         <div>
           <label>Nome: </label>
           <input type='text' value={ product.name } id={ "name" } onChange={(e) => typeEvent(e)} />

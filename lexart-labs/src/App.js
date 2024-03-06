@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Phones from './pages/Phones';
 import PhoneId from './pages/PhoneId';
+import AddPhone from './pages/AddPhone';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <Route path="/register" element={ <Register /> } />
           <Route exact path="/products" element={ <Phones /> } />
           <Route path="/products/:id" element={ <PhoneId /> } />
+          <Route path="/product/add" element={ <AddPhone /> } />
         </Routes>
       </div>
     )
